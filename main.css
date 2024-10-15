@@ -1,0 +1,184 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.no-display {
+  display: none;
+}
+
+.curvy-border {
+  border-radius: 10px;
+  padding-inline: 20px;
+  padding-block: 15px;
+}
+
+.container {
+  font-family: "Roboto", sans-serif;
+  color: hsl(234, 29%, 20%);
+  text-align: left;
+  font-weight: 400;
+}
+.container img {
+  width: 100%;
+  height: 100%;
+}
+.container .text {
+  margin-block: 10%;
+  margin-inline: 5%;
+}
+.container .text ul {
+  padding-inline-start: 0%;
+}
+.container .text ul li {
+  padding-inline-start: 8%;
+  margin-block: 10px;
+  list-style: none;
+  background-image: url("../assets/images/icon-list.svg");
+  background-repeat: no-repeat;
+}
+.container .text form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: hsl(231, 7%, 60%);
+}
+.container .text form .curvy-border {
+  border-radius: 10px;
+  padding-inline: 20px;
+  padding-block: 15px;
+}
+.container .text form div {
+  display: flex;
+  justify-content: space-between;
+}
+.container .text form div label {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.container .text form div .error-txt {
+  color: hsl(4, 100%, 67%);
+}
+.container .text form button {
+  margin-top: 1rem;
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  margin-top: 1rem;
+}
+.container .text form .error {
+  color: hsl(4, 100%, 67%);
+  background-color: hsla(4, 100%, 67%, 0.25);
+  opacity: 1;
+  border: 3px solid hsl(4, 100%, 67%);
+}
+.container .text form input:focus {
+  outline: none;
+}
+.container #success-msg {
+  margin-block-start: 25%;
+  margin-block-end: 10%;
+  margin-inline: 5%;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.container #success-msg div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.container #success-msg button {
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  justify-self: end;
+}
+.container #success-msg button:hover {
+  background-image: linear-gradient(to right, hsl(4, 100%, 67%), orange);
+}
+.container .flex {
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-color: hsl(235, 18%, 26%);
+  }
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(0, 0%, 100%);
+    display: grid;
+    grid-auto-columns: 380px;
+    padding: 2%;
+    border-radius: 30px;
+  }
+  .container > img {
+    border-radius: 10px;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    height: 100%;
+    object-fit: cover;
+  }
+  .container .text {
+    grid-row-start: 1;
+  }
+  .container #success-msg {
+    justify-content: center;
+    margin: 0;
+    gap: 1rem;
+    height: fit-content;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
